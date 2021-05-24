@@ -1,13 +1,19 @@
 <!doctype html>
-<html>
+<html lang=en>
  <head>
- <title>Annas Page</title>
- <meta charset="utf-8" />
- </head>
+    <title>Annas Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1"/>
+    <style>
+       body {font-family: sans-serif;}
+    </style> 
+</head>
  <body>
- <h1>Annas Page</h1>
- <p>
-Jeee  
- </p>
+    {% block contents %}
+    <h1>Annas Page</h1>
+    <p>
+       Jeee  
+    </p>
+    {% endblock contents %}
  </body>
 </html>
