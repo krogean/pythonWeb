@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block headline %}
+	<h1>Math is magic</h1>
+{% endblock headline %}
+{% block body %}
+	{% if number %}
+		<p> Yeah we have a number nice!: {{ number }}</p>
+	{% else %}
+		<p>:C no numbers today</p>
+	{% endif %}
+{% endblock body %}

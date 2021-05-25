@@ -7,7 +7,7 @@
 </head>
 <body>
 	{% block headline %}
-		<h1>Tämä on otsikko. Tähän tulee nimi: {{ name|lower }}</h1>
+		<h1>Tämä on otsikko. Tähän tulee nimi: {{ name | upper }}</h1>
 	{% endblock headline %}
 	{% block body %}
 		{% for fruit in fruits %}
