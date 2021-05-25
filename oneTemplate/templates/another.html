@@ -6,10 +6,33 @@
 {% block body %}
 	<p>Ja tänne voi laittaa jotain kivaa tekstiä</p>
 	<form method=POST>
-		name: </br>
-		<input type=text name="name"></br>
-		age: </br>
-		<input type=text name="age"></br>
+		<label>
+			name: </br>
+			<input type=text name="name">
+		</label>
+		</br>
+		<label>
+			age: </br>
+			<input type=number name="age">
+		</label>
+		</br>
+		<label>
+			pvm: </br>
+			<input type=date name="pvm">
+		</label>
+		</br>
+		<label>
+			jaa-a: </br>
+			<input type=button name="joo" value="joo">
+			<input type=button name="ei" value="ei">
+		</label>
+		</br>
+		<label>
+			Joku tämmönen viel tähän </br>
+			a: <input type=radio name="öö" value="a"> </br>
+			b: <input type=radio name="öö" value="b"> </br>
+			c: <input type=radio name="öö" value="c"> </br>
+		</label>
 		</br>
 		<input type=submit>
 	</form>
