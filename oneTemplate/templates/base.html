@@ -6,8 +6,10 @@
 	<meta name=viewport content="width=device-width, initial-scale-1">
 </head>
 <body>
+	{% block headline %}
+		<h1>Tämä on otsikko. Tähän tulee nimi: {{ name|lower }}</h1>
+	{% endblock headline %}
 	{% block body %}
-		<h1>Muotteja! Tähän tulee nimi: {{ name }}</h1>
 		{% for fruit in fruits %}
 			<p>{{ fruit }}</p>
 		{% endfor %}

@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
 	fruits = ["apple", "pear", "peach"]
-	return render_template("base.html", name= "Anna",fruits=fruits)
+	return render_template("base.html", name= "AnNa",fruits=fruits)
 
 @app.route("/another")
 def another():
