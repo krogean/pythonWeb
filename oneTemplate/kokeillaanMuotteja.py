@@ -3,7 +3,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	return render_template("joku.html")
+	fruits = ["apple", "pear", "peach"]
+	return render_template("base.html", name= "Anna",fruits=fruits)
 
 app.run()
 
