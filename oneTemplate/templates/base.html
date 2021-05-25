@@ -7,9 +7,11 @@
 </head>
 <body>
 	<h1>Muotteja! Tähän tulee nimi: {{ name }}</h1>
-	<p>emt toimiiko</p>
-	{% for fruit in fruits %}
-		<p>{{ fruit }}</p>
-	{% endfor %}
+	{% block body %}
+		<p>emt toimiiko</p>
+		{% for fruit in fruits %}
+			<p>{{ fruit }}</p>
+		{% endfor %}
+	{% endblock body %}
 </body>
 </html>
