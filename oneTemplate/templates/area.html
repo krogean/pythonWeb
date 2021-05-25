@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set title = "Lasketaan pinta-alaaaa" %}
+{% block title %}{{title}}{% endblock title %}
+{% block headline %}
+	<h1>{{title}}</h1>
+{% endblock headline %}
+{% block body %}
+	<p>Lasketaas juttuja</p>
+	<form method=POST> <!-- NOT DONE YET -->
+		<label>
+			Pituus: <br>
+			<input type=text name=side>		
+		</label>
+		<br>
+		<label>
+			<input type=submit>		
+		</label>	
+	</form>
+{% endblock body %}
