@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% set title = "Prrrrkl" %}
+{% block title %}{{title}}{% endblock title %}
+{% block headline %}
+	<h1>{{title}}</h1>
+{% endblock headline %}
+{% block body %}
+	{% set number = 100%}
+	{% if number %}
+		<p> Toimii: {{ number }}</p>
+	{% else %}
+		<p>Ei oo laitettu numeroo</p>
+	{% endif %}
+{% endblock body %}
