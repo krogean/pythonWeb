@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}This is the title{% endblock title %}</title>
+	<title>Muotteja!</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+<body>
+	{% block headline %}
+		<h1> Hello {{ name }}!</h1>
+	{% endblock headline %}
+	{% block body %}
+		{% for name in names %}
+			<p>{{ name }}</p>
+		{% endfor %}
+	{% endblock body %}
+</body>
+</html>
