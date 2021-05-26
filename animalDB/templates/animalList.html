@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+	{% for animal in animals %}
+		<h4>{{ animal.name }}</h4>
+		<p> Laji: {{ animal.species }}<br> Ikä: {{ animal.age }}</p>
+	{% endfor %}
+	<h2>Lisää uusi eläin (mut se ei viel tuu tohon listaan)</h2>
+	<form method=POST>
+		{% for field in form %}
+			<p>{{ field.label }}: {{ field }}</p>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock body %}
