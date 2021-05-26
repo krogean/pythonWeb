@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<title>Animal Data</title>	
+	</head>
+	<body>
+		<nav>
+			<a href="/"> Eläimet listassa </a> -
+			<a href="/new"> Lisää uusi eläin </a> -		
+			<a href="/msg"> Lähetä viesti </a>
+			
+		</nav>
+		{% if get_flashed_messages() %}                                         
+                        {% for message in get_flashed_messages() %}                     
+                                <p><b>{{ message }}</b></p>                             
+                        {% endfor %}
+                {% endif %}
+		<h1>Animal Data</h1>
+		{% block body %}	
+		{% endblock body %}
+
+	</body>
+</html>

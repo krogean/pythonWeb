@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block body %}
+	{% for animal in animals %}
+		<h4>{{ animal.name }}</h4>
+		<p> Laji: {{ animal.species }}<br> Ikä: {{ animal.age }}</p>
+	{% endfor %}
+{% endblock body %}
