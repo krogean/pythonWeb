@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+	<p>Toimii</p>
+	{% for todo in todos %}
+		<p>{{ todo.content }}</p>
+	{% endfor %}
+{% endblock body %}
