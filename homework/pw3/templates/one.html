@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set title = "Page number one" %}
+{% block content %}
+  <!-- Flash message -->
+  <a href="/onemsg"> Send another Secret message to base</a>
+  {% if get_flashed_messages() %}                                         
+    {% for message in get_flashed_messages() %}                     
+      <p>
+        <b>{{ message }}</b>
+      </p>                             
+    {% endfor %}
+  {% endif %}
+  <!-- end of Flash message -->
+  <p>This comes from the first page</p>
+{% endblock content %}
