@@ -10,6 +10,7 @@ db = SQLAlchemy(app) #m
 class Game(db.Model): #m
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, nullable=False)
+	genre = db.Column(db.String, nullable=False)
 
 GameForm = model_form(Game, base_class=FlaskForm, db_session=db.session) #m!!!
 
@@ -17,10 +18,10 @@ GameForm = model_form(Game, base_class=FlaskForm, db_session=db.session) #m!!!
 def initMe():
 	db.create_all() #m
 	
-	game = Game(name="The great Game")
+	game = Game(name="The great Game", genre="the Best")
 	db.session.add(game) #m
 
-	game = Game(name="The boring Game")
+	game = Game(name="The boring Game", genre="the Worst")
 	db.session.add(game)
 
 	db.session.commit()
