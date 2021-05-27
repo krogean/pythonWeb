@@ -1,0 +1,8 @@
+{% set title = "Gamelist" %}
+{% extends "base.html" %}
+{% block content %}
+  <p><b>List of games:</b></p>
+  {% for game in games %}
+    <p>{{ game.name }}</p>
+  {% endfor %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% set title = "Add Game" %}
+{% extends "base.html" %}
+{% block content %}
+  <p><b>Add a new game:</b></p>
+  <form method=POST>
+    {% for field in form %}
+    <p>
+      {% if not field.flags.hidden %}
+        {{ field.label }}: 
+      {% endif %}
+      {{ field }}
+    </p>
+    {% endfor %}
+    <input type=submit>
+{% endblock content %}

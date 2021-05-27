@@ -1,29 +1,23 @@
-<!doctype html>
+{% if not title %}
+  {% set title = "Base title" %}
+{% endif %}
+
+<!doctype>
 <html lang=en>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{% set title = "This is a title" %}
-		<title>
-			{% block title %}
-				{{ title }}
-			{% endblock title %}
-		</title>
-	</head>
-	<body>
-		<nav>
-			<a href="/">Frontpage</a> - 
-			<a href="/list">List of games</a>
-		</nav>
-		<h1>
-			{% block headline %}
-				{{ title }}
-			{% endblock headline %}
-		</h1>
-		{% block body %}
-			<p>
-				This is the frontpage (base)
-			</p>		
-		{% endblock body %}
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name=viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Index</a> - 
+      <a href="/gamelist">Gamelist</a> - 
+      <a href="/addgame">AddGame</a>
+    </nav>
+    <h1>{{ title }}</h1>
+    {% block content %}
+      <p>Base text</p>
+    {% endblock content %}
+  </body>
 </html>
