@@ -1,0 +1,16 @@
+{% set title = "Add a new Contact" %}
+{% extends "base.html" %}
+{% block content %}
+	<p><b>That's a nice contact dude</b></p>
+	<form method=POST>
+		{% for field in form %}
+			<p>
+				{% if not field.flags.hidden %}
+					{{ field.label }} <br>
+				{% endif %}
+				{{ field }}
+			</p>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock content %}

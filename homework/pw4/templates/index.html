@@ -1,0 +1,13 @@
+{% set title = "Contacts" %}
+{% extends "base.html" %}
+{% block content %}
+	{% for contact in contacts %}
+		<p>
+			<b>{{ contact.name }}</b><br>
+			{{ contact.phonenumber }} <br>
+			{{ contact.email }} <br>
+			<a href="/{{ contact.id }}/edit">Edit</a> - 
+			<a href="/{{ contact.id }}/delete">Delete</a>
+		</p>
+	{% endfor %}
+{% endblock content %}
