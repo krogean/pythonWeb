@@ -3,6 +3,9 @@
 {% block content %}
   <p><b>List of games:</b></p>
   {% for game in games %}
-    <p>{{ game.name }}</p>
+    <p>
+      {{ game.name }}
+      <a href="{{ game.id }}/edit">Edit</a>
+    </p>
   {% endfor %}
 {% endblock content %}

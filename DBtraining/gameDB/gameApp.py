@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy #m
 from flask_wtf import FlaskForm #m
 from wtforms.ext.sqlalchemy.orm import model_form #m
@@ -34,12 +34,16 @@ def gamelist():
 	games = Game.query.all() #m
 	return render_template("gamelist.html", games=games)
 
+@app.route("/<int:id>/edit", methods=["GET", "POST"])
 @app.route("/addgame", methods=["GET", "POST"])
-def addgame():
-	form = GameForm() #m
+def addgame(id=None): #m!!!
+	game = Game()
+	if id:
+		game = Game.query.get_or_404(id)
+
+	form = GameForm(obj=game) #m
 
 	if form.validate_on_submit(): #m
-		game = Game() #m
 		form.populate_obj(game) #m
 		
 		db.session.add(game) #m

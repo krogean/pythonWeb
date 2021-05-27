@@ -1,0 +1,24 @@
+{% if not title%}
+	{% set title = "Base title"%}
+{% endif %}
+
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<title>{{ title }}</title>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+		{% block content %}
+			<p><b>List of books</b></p>
+			{% for book in books %}
+				<p>
+					{{ book.name }}
+					<a href="/{{ book.id }}/edit">Edit</a>
+				</p>
+			{% endfor %}
+		{% endblock %}
+	</body>
+</html>

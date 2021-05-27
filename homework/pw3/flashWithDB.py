@@ -43,6 +43,18 @@ def gamelist():
 @app.route("/addgame", methods=["GET", "POST"])
 def addgame():
 	gameForm = GameForm()
+	if gameForm.validate_on_submit():
+		game = Game()
+		gameForm.populate_obj(game)
+		
+		db.session.add(game)
+		db.session.commit()
+		
+		print("Added your game, thanks.")
+		# flash("Added")
+		# redirect("/")
+
+	
 	print(request.form)
 	return render_template("addgame.html", form=gameForm)
 
