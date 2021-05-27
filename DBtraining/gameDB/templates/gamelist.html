@@ -4,8 +4,9 @@
   <p><b>List of games:</b></p>
   {% for game in games %}
     <p>
-      {{ game.name }}
-      <a href="{{ game.id }}/edit">Edit</a>
+      {{ game.name }} - 
+      <a href="/{{ game.id }}/edit">Edit</a> - 
+      <a href="/{{ game.id }}/delete">Delete</a>
     </p>
   {% endfor %}
 {% endblock content %}

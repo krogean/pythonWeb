@@ -45,14 +45,20 @@ def addgame(id=None): #m!!!
 
 	if form.validate_on_submit(): #m
 		form.populate_obj(game) #m
-		
 		db.session.add(game) #m
 		db.session.commit()
-
 		print("New Game added")
+		return redirect("/gamelist")
 
 	return render_template("addgame.html", form=form)
 
+@app.route("/<int:id>/delete")
+def deletegame(id):
+	game = Game.query.get_or_404(id)
+	db.session.delete(game)
+	db.session.commit()
+
+	return redirect("/gamelist")
 
 if __name__ == "__main__":
 	app.run()
