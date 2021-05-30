@@ -67,7 +67,6 @@ def editContact(id):
 		return redirect("/")
 	return render_template("addcontact.html", form=form)
 
-#Delete contact
 @app.route("/<int:id>/delete")
 def deleteContact(id):
 	contact = Contact.query.get_or_404(id)

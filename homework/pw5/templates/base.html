@@ -1,0 +1,39 @@
+{% if not title %}
+	{% set title = "BASE" %}
+{% endif %}
+
+
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ title }}</title>
+		<meta name=viewport content="width=device-width, initial-scale=1">
+	</head>
+	<body>	
+		<nav>
+			<a href="/">List of Books</a> - 
+			<a href="/addDesc">Add a new Book Description</a> - 
+			{% if currentUser() %}                 
+				<a href="/logout">Logout</a> -
+				{{ currentUser().email }}
+			{% else %}
+				<a href="/login">Login</a> - 
+				<a href="/register">Register</a>
+			{% endif %}
+		</nav>
+		{% if get_flashed_messages() %}
+			{% for msg in get_flashed_messages() %}
+				<p>{{ msg }}</p>
+			{% endfor %}
+		{% endif %}
+		<h1>{{ title }}</h1>
+		{% block content %}
+			<p>juttui</p>
+		{% endblock content %}
+	</body>
+</html>
+
+
+
+
