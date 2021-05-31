@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash #m!!!
 app = Flask(__name__)
 db = SQLAlchemy(app) #m
 app.secret_key = "asldhkadfjalfkhnalkejlakfn"
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///anna'
 
 # Creating Book-class
 class Book(db.Model):
@@ -95,7 +96,7 @@ def custom403(e):
 #User things ###TÄSTÄ EI MISTÄÄN MUISTANU MITÄÄN###!!!!!!!!!
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	email = db.Column(db.String, nullable=False)
+	email = db.Column(db.String, nullable=False, unique=True)
 	passwordHash = db.Column(db.String, nullable=False)
 	
 	def setPassword(self, password):
@@ -155,10 +156,13 @@ def logoutView():
 def registerView():
         form = RegisterForm()
         if form.validate_on_submit():
-                if form.key.data != "tero":
+                if form.key.data != "anna":
                         flash("Bad registration key.")
                         return redirect("/register")
                 user = User()
+				if User.query.filter_by(email=user.email).first():
+					flash("User already exits. Please log in!")
+					return redirect("/login")
                 user.email = form.email.data
                 user.setPassword(form.password.data)
                 db.session.add(user)
