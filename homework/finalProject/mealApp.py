@@ -1,3 +1,4 @@
+# Used sources: terokarvinen.com and his course Python Web Service From Idea to Production
 from flask import Flask, render_template, redirect, flash, session, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm

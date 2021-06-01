@@ -1,3 +1,4 @@
+# used sources: terokarvinen.com and his course "Python Web Service From Idea to Production"
 #!/usr/bin/python3
 import sys
 

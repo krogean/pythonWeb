@@ -1,3 +1,5 @@
+# Used sources: terokarvinen.com and his course "Python Web Service From Idea to Production"
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
