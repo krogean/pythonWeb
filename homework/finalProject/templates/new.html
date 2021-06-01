@@ -1,0 +1,20 @@
+{% if not title %}
+	{% set title = "Add a new meal" %}
+{% endif %}
+{% extends "base.html" %}
+
+{% block content %}
+	<form method=POST>
+		{% for field in form %}
+			{% if not field.flags.hidden %}
+				{{ field.label }}<br>
+				{% for fieldError in field.errors %}
+					<b>{{ fieldError }}</b>
+				{% endfor %}
+			{% endif %}
+			{{ field }}<br>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock content %}
+
