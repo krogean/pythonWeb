@@ -1,0 +1,19 @@
+{% set title = "my Meals" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="/new">Add a new meal</a>
+    {% for meal in meals %}
+      {% if meal.user == currentUser() %}
+	<p>
+        <b>{{ meal.name }}</b><br>
+        Calories: {{ meal.kcal }}
+        <br>
+        <a href="/{{ meal.id }}/edit">Edit</a> - 
+        <a href="/{{ meal.id }}/delete">Delete</a>
+      </p>
+      {% endif %}
+    {% endfor %}
+{% endblock %}
+
